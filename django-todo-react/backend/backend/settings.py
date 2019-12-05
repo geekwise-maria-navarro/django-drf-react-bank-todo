@@ -127,5 +127,5 @@ STATIC_URL = '/static/'
 # we whitelist localhost:3000 because that's where frontend will be served
 # comment out for now, to prevent error
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/',
+    'https://3000-aefaaab8-4a8f-4c57-b55d-e29a2b40573c.ws-us02.gitpod.io',
 )
