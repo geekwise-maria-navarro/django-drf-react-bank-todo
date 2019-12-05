@@ -1,1 +1,1 @@
-web: cd app && python manage.py migrate && gunicorn main.wsgi
+web: cd django-todo-react && python manage.py migrate && gunicorn main.wsgi
