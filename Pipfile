@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "==2.4.4"
+
 
 [packages]
 djangorestframework = "==3.10.3"
@@ -11,6 +13,6 @@ django-cors-headers = "*"
 django = "==2.2.7"
 gunicorn = "==20.0.2"
 django-heroku = "==0.3.1"
-
+psycopg2 = "==2.7.7"
 [requires]
-python_version = "3.7"
+python_version = "3.7.5"
