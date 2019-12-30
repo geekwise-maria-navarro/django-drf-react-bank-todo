@@ -1,0 +1,1 @@
+web: cd backend && cd app && python manage.py migrate && gunicorn main.wsgi
