@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,8 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'drf',
+    # 'drf',
+    'corsheaders',           
+    'rest_framework', 
+    'todo',
 ]
 
 MIDDLEWARE = [
@@ -113,5 +116,12 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = (
+<<<<<<< HEAD
         'http://localhost:3000',
     )
+=======
+         'https://localhost:3000',
+)
+
+django_heroku.settings(locals())
+>>>>>>> cef39786047f89d4ddb8dba147760145e060c35d
