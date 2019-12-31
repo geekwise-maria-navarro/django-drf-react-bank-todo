@@ -21,7 +21,7 @@ class App extends Component {
     refreshList = () => {
     axios
         .get("https://django-drf-todo-grace.herokuapp.com/api/todos/")
-        .then(res => this.setState({ todoList: res.data }))
+        .then(res => this.setState({ todoList: res.data.results }))
         .catch(err => console.log(err));
     };
     displayCompleted = status => {
