@@ -8,6 +8,7 @@ from todo import views
 router = routers.DefaultRouter()
 router.register('users', drf_views.user_viewset )
 router.register(r'todos', views.TodoView, 'todo')
+router.register(r'branch', views.BranchViewSet, 'branch')
 
 urlpatterns = [
     path('', admin.site.urls),

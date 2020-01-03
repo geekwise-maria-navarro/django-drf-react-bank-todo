@@ -9,3 +9,11 @@ class Todo(models.Model):
 
       def _str_(self):
         return self.title
+
+class Branch(models.Model):
+    class Meta:
+        verbose_name_plural = 'branches'
+    bank_name = models.CharField(max_length=300)
+    location = models.CharField(max_length=300)
+    def __str__(self):
+        return(f"{self.bank_name}")
