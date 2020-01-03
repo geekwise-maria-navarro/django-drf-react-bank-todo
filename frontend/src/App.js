@@ -8,9 +8,8 @@ class App extends Component {
     this.state = {
       viewCompleted: false,
       activeItem: {
-        title: "",
-        description: "",
-        completed: false
+        bank_name: "",
+        location: "",
       },
       todoList: []
     };
@@ -20,13 +19,13 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("https://django-drf-todo-grace.herokuapp.com/api/todos/")
+      .get("https://django-drf-todo-grace.herokuapp.com/branch/")
       .then(res => this.setState({ todoList: res.data.results }))
       .catch(err => console.log(err));
   };
   displayCompleted = status => {
     if (status) {
-      return this.setState({ viewCompleted: true });
+      return this.setState({ viewCompleted: false });
     }
     return this.setState({ viewCompleted: false });
   };
@@ -37,22 +36,25 @@ class App extends Component {
           onClick={() => this.displayCompleted(true)}
           className={this.state.viewCompleted ? "active" : ""}
         >
-          complete
+          Branch
         </span>
-        <span
+        {/* <span
           onClick={() => this.displayCompleted(false)}
           className={this.state.viewCompleted ? "" : "active"}
         >
           Incomplete
-        </span>
+        </span> */}
       </div>
     );
   };
   renderItems = () => {
-    const { viewCompleted } = this.state;
-    const newItems = this.state.todoList.filter(
-      item => item.completed === viewCompleted
-    );
+    // const { viewCompleted } = this.state;
+    // const newItems = this.state.todoList.filter(
+    //   item => item.completed === viewCompleted
+    // ); for todo list only, not bank
+    
+    const newItems=this.state.todoList
+
     return newItems.map(item => (
       <li
         key={item.id}
@@ -62,9 +64,9 @@ class App extends Component {
           className={`todo-title mr-2 ${
             this.state.viewCompleted ? "completed-todo" : ""
           }`}
-          title={item.description}
+          title={item.bank_name}
         >
-          {item.title}
+          {item.bank_name}
         </span>
         <span>
           <button
@@ -91,21 +93,21 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`https://django-drf-todo-grace.herokuapp.com/api/todos/${item.id}/`, item)
+        .put(`https://django-drf-todo-grace.herokuapp.com/branch/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("https://django-drf-todo-grace.herokuapp.com/api/todos/", item)
+      .post("https://django-drf-todo-grace.herokuapp.com/branch/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`https://django-drf-todo-grace.herokuapp.com/api/todos/${item.id}`)
+      .delete(`https://django-drf-todo-grace.herokuapp.com/branch/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
-    const item = { title: "", description: "", completed: false };
+    const item = { bank_name: "", location: "" };
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
   editItem = item => {
@@ -120,7 +122,7 @@ class App extends Component {
             <div className="card p-3">
               <div className="">
                 <button onClick={this.createItem} className="btn btn-primary">
-                  Add task
+                  Add item
                 </button>
               </div>
               {this.renderTabList()}
