@@ -11,9 +11,8 @@ router.register(r'todos', views.TodoView, 'todo')
 router.register(r'branch', views.BranchViewSet, 'branch')
 
 urlpatterns = [
-    path('', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('auth', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include(router.urls)),
+    path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
 
     path('admin/', admin.site.urls),
 
