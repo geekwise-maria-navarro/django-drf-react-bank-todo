@@ -41,6 +41,7 @@ export default class CustomModal extends Component {
                 value={this.state.activeItem.bank_name}
                 onChange={this.handleChange}
                 placeholder="Enter Bank Name"
+                maxLength="256"
                 />
             </FormGroup>
             <FormGroup>
