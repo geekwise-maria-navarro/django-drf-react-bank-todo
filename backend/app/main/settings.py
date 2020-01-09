@@ -16,6 +16,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 10
+}
 
 # Application definition
 
@@ -26,10 +31,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'drf',
+    'drf',
     'corsheaders',           
     'rest_framework', 
     'todo',
+    'knox',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -110,10 +117,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # DRF Settings:
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE' : 10
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE' : 10
+# }
 
 # CORS_ORIGIN_WHITELIST = (
 #          'https://localhost:3000',

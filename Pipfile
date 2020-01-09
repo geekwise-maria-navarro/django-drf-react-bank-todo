@@ -12,6 +12,7 @@ djangorestframework = "==3.10.3"
 django-heroku = "==0.3.1"
 gunicorn = "==20.0.2"
 django-cors-headers = "*"
+django-rest-knox = "*"
 psycopg2 = "==2.7.7"
 
 [requires]
