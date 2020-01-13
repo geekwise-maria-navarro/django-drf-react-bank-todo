@@ -86,6 +86,7 @@ export const register = ({ username, email, password }) => dispatch => {
             payload: res.data
           });
           alert("You have successfully registered an account. Please login.");
+          console.log("register");
       })
       .catch(err => {
           dispatch(returnErrors(err.response.data, err.response.status));
