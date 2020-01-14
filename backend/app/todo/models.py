@@ -17,3 +17,12 @@ class Branch(models.Model):
     location = models.CharField(max_length=256)
     def __str__(self):
         return(f"{self.bank_name}")
+
+
+class Customer(models.Model):
+    customer_name = models.CharField(max_length=256)
+    phone_number = models.CharField(max_length=30)
+    email = models.CharField(max_length=256)
+    address = models.CharField(max_length=256)
+    def __str__(self):
+        return(f"{self.customer_name}")
