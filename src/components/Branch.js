@@ -20,7 +20,7 @@ class Branch extends Component {
   }
   refreshList = () => {
     axios
-      .get("https://django-drf-todo-grace.herokuapp.com/branch/")
+      .get("https://127.0.0.1:8000/api/branch/")
       .then(res => this.setState({ todoList: res.data }))
       .catch(err => console.log(err));
   };
@@ -94,17 +94,17 @@ class Branch extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`https://django-drf-todo-grace.herokuapp.com/branch/${item.id}/`, item)
+        .put(`https://127.0.0.1:8000/api/branch/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("https://django-drf-todo-grace.herokuapp.com/branch/", item)
+      .post("https://127.0.0.1:8000/api/branch/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`https://django-drf-todo-grace.herokuapp.com/branch/${item.id}`)
+      .delete(`https://127.0.0.1:8000/api/branch/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
