@@ -14,7 +14,7 @@ SECRET_KEY = '(d3!3p2x4w)j@6q$!0to8oudbyo=6e(7k=14_+o59qk!+1823*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bank-frontend.herokuapp.com']
+ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
@@ -122,10 +122,11 @@ STATIC_URL = '/static/'
 #     'PAGE_SIZE' : 10
 # }
 
-# CORS_ORIGIN_WHITELIST = (
-#          'https://localhost:3000',
-# )
+CORS_ORIGIN_WHITELIST = (
+        #  'https://localhost:3000',
+        'https://bank-frontend.herokuapp.com',
+)       
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
 django_heroku.settings(locals())
