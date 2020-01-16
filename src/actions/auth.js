@@ -36,7 +36,7 @@ export const loadUser = () => (dispatch, getState) => {
           });
       })
       .catch(err => {
-          dispatch(returnErrors(err.response.data, err.response.status));
+          dispatch(returnErrors(err.response, err.response));
           dispatch({
               type: AUTH_ERROR
           });
@@ -61,7 +61,7 @@ export const login = (username, password) => dispatch => {
           });
       })
       .catch(err => {
-          dispatch(returnErrors(err.response.data, err.response.status));
+        //   dispatch(returnErrors(err.response.data, err.response.status));
           dispatch({
               type: LOGIN_FAIL
           });
@@ -89,7 +89,7 @@ export const register = ({ username, email, password }) => dispatch => {
           console.log("register");
       })
       .catch(err => {
-          dispatch(returnErrors(err.response.data, err.response.status));
+        //   dispatch(returnErrors(err.response.data, err.response.status));
           dispatch({
               type: REGISTER_FAIL
           });
