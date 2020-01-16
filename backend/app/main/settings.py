@@ -14,7 +14,7 @@ SECRET_KEY = '(d3!3p2x4w)j@6q$!0to8oudbyo=6e(7k=14_+o59qk!+1823*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bank-frontend.herokuapp.com']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
