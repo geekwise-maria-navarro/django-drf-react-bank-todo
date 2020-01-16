@@ -1,9 +1,11 @@
 heroku: python.django.drf.node.react.postgres.fullstack.app
 
 Heroku: Django-DRF-React_Bank_Project
-Bank App will apply CRUD functions between the User and Database. You will be able to make edits on branches, accounts, customers, and products that can be directly reflected on the backend database.
+
+Bank App will apply CRUD functions between the User and Database. You will be able to make edits that can be directly reflected on the backend database.
 
 [Heroku Backend](https://bank-bankend.herokuapp.com/)
+
 [Heroku Frontend](https://bank-frontend.herokuapp.com/)
 
 Username: admin
