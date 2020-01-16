@@ -9,9 +9,14 @@ Bank App will apply CRUD functions between the User and Database. You will be ab
 [Heroku Frontend](https://bank-frontend.herokuapp.com/)
 
 Username: admin
+
 Password: admin
+
 /* OR */
+
 Register and Login
+
+
 Installation
 
 In order to run this app locally you will need to install Django v2.2.7 or v2.2.8, Python v3 or greater, and NodeJS. You can follow the instruction below to get this started.
