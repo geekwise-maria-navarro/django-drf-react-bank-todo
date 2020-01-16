@@ -28,7 +28,7 @@ export const loadUser = () => (dispatch, getState) => {
         config.headers['Authorization'] = `Token ${token}`;
     }
     axios
-      .get('https://django-drf-todo-grace.herokuapp.com/users/api/auth/user', config)
+      .get('https://bank-bankend.herokuapp.com/users/api/auth/user', config)
       .then(res => {
           dispatch({
             type: USER_LOADED,
@@ -53,7 +53,7 @@ export const login = (username, password) => dispatch => {
     // Request Body 
     const body = JSON.stringify({ username, password });
     axios
-      .post('https://django-drf-todo-grace.herokuapp.com/users/api/auth/login', body, config)
+      .post('https://bank-bankend.herokuapp.com/users/api/auth/login', body, config)
       .then(res => {
           dispatch({
             type: LOGIN_SUCCESS,
@@ -79,7 +79,7 @@ export const register = ({ username, email, password }) => dispatch => {
     // Request Body 
     const body = JSON.stringify({ username, email, password });
     axios
-      .post('https://django-drf-todo-grace.herokuapp.com/users/api/auth/register', body, config)
+      .post('https://bank-bankend.herokuapp.com/users/api/auth/register', body, config)
       .then(res => {
           dispatch({
             type: REGISTER_SUCCESS,
@@ -111,7 +111,7 @@ export const logout = () => (dispatch, getState) => {
         config.headers['Authorization'] = `Token ${token}`;
     }
     axios
-      .post('https://django-drf-todo-grace.herokuapp.com/users/api/auth/logout', null, config)
+      .post('https://bank-bankend.herokuapp.com/users/api/auth/logout', null, config)
       .then(res => {
           dispatch({
             type: LOGOUT_SUCCESS,
